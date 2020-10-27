@@ -1,6 +1,6 @@
-name: 'SchemaCrawler GitHub Action'
+name: 'SchemaCrawler Action for GitHub Actions'
 author: 'Sualeh Fatehi'
-description: 'Run SchemaCrawler command in the build'
+description: 'Run a SchemaCrawler command in the build pipeline'
 
 branding:
   icon: 'database'
