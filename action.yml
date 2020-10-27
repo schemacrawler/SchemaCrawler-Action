@@ -1,0 +1,15 @@
+name: 'SchemaCrawler GitHub Action'
+author: 'Sualeh Fatehi'
+description: 'Run SchemaCrawler command in the build'
+
+branding:
+  icon: 'database'
+  color: 'purple'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+outputs:
+  exit_status:
+    description: 'Exit status of the SchemaCrawler command-line run'
