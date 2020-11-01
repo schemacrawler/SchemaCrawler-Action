@@ -29,17 +29,7 @@ jobs:
         tag_name: ${{ github.ref }}
         release_name: ${{ github.ref }}
         body: |
-          SchemaCrawler Action for GitHub Actions - Release ${{ github.sha }}
+          SchemaCrawler Action for GitHub Actions
+          Release ${{ github.sha }}
         draft: false
         prerelease: false
-
-# CREATE AND PUBLISH DOCKER IMAGE
-    - id: publish-image
-      name: Push to GitHub Packages
-      uses: docker/build-push-action@v1
-      with:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-        registry: docker.pkg.github.com
-        repository: schemacrawler/SchemaCrawler-Action/SchemaCrawler-Action
-        tag_with_ref: true
