@@ -8,7 +8,7 @@ banner()
   echo "+----------------------------------------------------+"
 }
 
-banner "Starting SchemaCrawler Action for GitHub Actions job"
+banner "SchemaCrawler Action for GitHub Actions"
 SC_DIR=/opt/schemacrawler
 java -cp "$SC_DIR"/lib/*:"$GITHUB_WORKSPACE"/.github/schemacrawler/lib/*:"$GITHUB_WORKSPACE"/.github/schemacrawler/config schemacrawler.Main "$@"
 EXIT_STATUS=$?

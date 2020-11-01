@@ -1,1 +1,4 @@
-.git.old/
+.settings/
+.project
+.classpath
+*.launch
