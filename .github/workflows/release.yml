@@ -79,8 +79,3 @@ jobs:
           org.opencontainers.image.source=https://github.com/schemacrawler/SchemaCrawler-Action
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
-
-    - id: image-digest
-      name: Image digest
-      run: |
-        echo ${{ steps.docker-build.outputs.digest }}

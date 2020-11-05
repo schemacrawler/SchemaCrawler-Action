@@ -3,12 +3,12 @@ author: 'Sualeh Fatehi'
 description: 'Run a SchemaCrawler command in the build pipeline'
 
 branding:
-  icon: 'database'
-  color: 'purple'
+  icon: database
+  color: purple
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: docker
+  image: schemacrawler/schemacrawler-action:v16.11.5
 
 outputs:
   exit_status:
