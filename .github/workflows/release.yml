@@ -69,8 +69,14 @@ jobs:
         file: ./Dockerfile
         builder: ${{ steps.buildx.outputs.name }}
         push: true
-        tags: ${{ steps.docker-meta.outputs.tags }}
-        labels: ${{ steps.docker-meta.outputs.labels }}
+        tags: |
+          schemacrawler/schemacrawler-action:latest
+          schemacrawler/schemacrawler-action:v16.11.5
+          schemacrawler/schemacrawler-action:${{ github.sha }}
+        labels: |
+          ${{ steps.docker-meta.outputs.labels }}
+          org.opencontainers.image.url=https://www.schemacrawler.com
+          org.opencontainers.image.source=https://github.com/schemacrawler/SchemaCrawler-Action
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
 
