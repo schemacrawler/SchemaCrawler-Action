@@ -39,7 +39,7 @@ jobs:
       name: Docker meta
       uses: crazy-max/ghaction-docker-meta@v1
       with:
-        images: ${{ github.repository }}
+        images: schemacrawler/schemacrawler-action
 
     - id: buildx
       name: Set up Docker Buildx
@@ -69,10 +69,7 @@ jobs:
         file: ./Dockerfile
         builder: ${{ steps.buildx.outputs.name }}
         push: true
-        tags: |
-          ${{ github.repository }}:latest
-          ${{ github.repository }}:v16.11.5
-          ${{ github.repository }}:${{ github.sha }}
+        tags: ${{ steps.docker-meta.outputs.tags }}
         labels: ${{ steps.docker-meta.outputs.labels }}
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
@@ -81,4 +78,4 @@ jobs:
       name: Image digest
       run: |
         echo ${{ steps.docker-build.outputs.digest }}
-        docker image inspect ${{ github.repository }}:latest
+        docker image inspect schemacrawler/schemacrawler-action:latest
