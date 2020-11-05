@@ -84,4 +84,3 @@ jobs:
       name: Image digest
       run: |
         echo ${{ steps.docker-build.outputs.digest }}
-        docker image inspect schemacrawler/schemacrawler-action:latest
