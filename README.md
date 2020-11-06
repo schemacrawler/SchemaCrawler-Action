@@ -9,3 +9,7 @@
 The *SchemaCrawler Action for GitHub Actions* allows you to run a SchemaCrawler report of your database using a GitHub Actions workflow for your project.
 
 See [an example GitHub Actions workflow](https://github.com/schemacrawler/SchemaCrawler-Action-Usage-Example) that shows how to use the SchemaCrawler Action for GitHub Actions.
+
+Also take a look at the following article for ideas on how you could use the SchemaCrawler Action
+- [Generate Database Diagrams With GitHub Actions Workflows](https://dev.to/sualeh/generate-database-diagrams-with-github-actions-workflows-4l96)
+- [Lint Your Database Schema With GitHub Actions Workflows](https://dev.to/sualeh/lint-your-database-schema-with-github-actions-workflows-57cg)
