@@ -4,7 +4,7 @@ description: 'Run a SchemaCrawler command in the build pipeline'
 
 branding:
   icon: database
-  color: purple
+  color: white
 
 runs:
   using: docker
