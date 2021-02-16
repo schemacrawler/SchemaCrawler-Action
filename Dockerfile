@@ -1,4 +1,4 @@
-FROM schemacrawler/schemacrawler:v16.11.7
+FROM schemacrawler/schemacrawler:v16.12.1
 
 # Change user to 'root' to get access to the
 # currently checked out project in $GITHUB_WORKSPACE
