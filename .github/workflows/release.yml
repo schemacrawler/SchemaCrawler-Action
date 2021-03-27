@@ -29,8 +29,9 @@ jobs:
         tag_name: ${{ github.ref }}
         release_name: ${{ github.ref }}
         body: |
-          SchemaCrawler Action for GitHub Actions
-          Release ${{ github.sha }}
+          SchemaCrawler Action for GitHub Actions          
+          SchemaCrawler ${{ github.ref }} release at last commit ${{ github.sha }}
+          See the change history at https://www.schemacrawler.com/changes-report.html
         draft: false
         prerelease: false
 
@@ -71,7 +72,7 @@ jobs:
         push: true
         tags: |
           schemacrawler/schemacrawler-action:latest
-          schemacrawler/schemacrawler-action:v16.14.1
+          schemacrawler/schemacrawler-action:v16.14.2
           schemacrawler/schemacrawler-action:${{ github.sha }}
         labels: |
           ${{ steps.docker-meta.outputs.labels }}
