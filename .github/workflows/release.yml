@@ -72,7 +72,7 @@ jobs:
         push: true
         tags: |
           schemacrawler/schemacrawler-action:latest
-          schemacrawler/schemacrawler-action:v16.15.10
+          schemacrawler/schemacrawler-action:v16.15.11
           schemacrawler/schemacrawler-action:${{ github.sha }}
         labels: |
           ${{ steps.docker-meta.outputs.labels }}
