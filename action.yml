@@ -8,7 +8,7 @@ branding:
 
 runs:
   using: docker
-  image: docker://schemacrawler/schemacrawler-action:v16.23.2
+  image: docker://schemacrawler/schemacrawler-action:v16.24.1
 
 outputs:
   exit_status:
