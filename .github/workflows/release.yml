@@ -32,7 +32,7 @@ jobs:
 # SETUP BUILD ENVIRONMENT
     - id: checkout-code
       name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
 # CREATE GITHUB RELEASE AND ADD ASSETS
     - id: create-release
