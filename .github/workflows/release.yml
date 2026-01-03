@@ -81,7 +81,7 @@ jobs:
         push: true
         tags: |
           schemacrawler/schemacrawler-action:latest
-          schemacrawler/schemacrawler-action:v17.3.0
+          schemacrawler/schemacrawler-action:v17.4.0
           schemacrawler/schemacrawler-action:${{ github.sha }}
         labels: |
           ${{ steps.docker-meta.outputs.labels }}
