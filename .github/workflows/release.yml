@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  DOCKER_IMAGE_NAME: schemacrawler/schemacrawler
+  DOCKER_IMAGE_NAME: schemacrawler/schemacrawler-action
   DOCKER_IMAGE_TAG: latest
   DOCKERFILE_PATH: ./Dockerfile
 
@@ -88,6 +88,7 @@ jobs:
         images: |
           ${{ env.DOCKER_IMAGE_NAME }}
         tags: |	
+          type=semver,pattern=v{{version}},priority=940
           type=semver,pattern={{version}},priority=930
           type=semver,pattern={{major}}.{{minor}},priority=920
           type=semver,pattern={{major}},priority=910
@@ -98,7 +99,7 @@ jobs:
           org.opencontainers.image.vendor=SchemaCrawler
           org.opencontainers.image.licenses=(EPL-2.0)
           org.opencontainers.image.url=https://www.schemacrawler.com/
-          org.opencontainers.image.documentation=https://github.com/schemacrawler/SchemaCrawler-AI-MCP-Server-Usage
+          org.opencontainers.image.documentation=https://github.com/schemacrawler/SchemaCrawler-Action
 
     - id: push-docker-image
       name: Build and push Docker image
