@@ -92,7 +92,6 @@ jobs:
           type=semver,pattern={{version}},priority=930
           type=semver,pattern={{major}}.{{minor}},priority=920
           type=semver,pattern={{major}},priority=910
-          type=sha
         labels: |
           maintainer=Sualeh Fatehi <sualeh@hotmail.com>
           org.opencontainers.image.authors=Sualeh Fatehi <sualeh@hotmail.com>
