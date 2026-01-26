@@ -1,5 +1,9 @@
 **:star: Star it :arrow_heading_up: if you love it!**
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/schemacrawler/SchemaCrawler-Action?color=FFDAB9)](https://hub.docker.com/r/schemacrawler/schemacrawler-action/)
+![GitHub Repo stars](https://img.shields.io/github/stars/schemacrawler/SchemaCrawler-Action?style=social)
+
+
 # <img src="https://raw.githubusercontent.com/schemacrawler/SchemaCrawler/main/schemacrawler-website/src/site/resources/images/schemacrawler_logo.png" height="100px" width="100px" valign="middle"/> SchemaCrawler Action for GitHub Actions
 
 > **Note**: Please see the [SchemaCrawler website](https://www.schemacrawler.com/) for more details.
