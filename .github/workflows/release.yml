@@ -14,6 +14,7 @@ env:
   DOCKER_IMAGE_NAME: schemacrawler/schemacrawler-action
   DOCKER_IMAGE_TAG: latest
   DOCKERFILE_PATH: ./Dockerfile
+  DOCKER_CONTEXT_PATH: ./
 
 jobs:
   build:
@@ -39,7 +40,7 @@ jobs:
       name: Checkout code
       uses: actions/checkout@v6
 
-# CREATE GITHUB RELEASE AND ADD ASSETS
+# CREATE GITHUB RELEASE
     - id: create-release
       name: Create GitHub release
       uses: softprops/action-gh-release@v2
@@ -98,7 +99,7 @@ jobs:
           org.opencontainers.image.vendor=SchemaCrawler
           org.opencontainers.image.licenses=(EPL-2.0)
           org.opencontainers.image.url=https://www.schemacrawler.com/
-          org.opencontainers.image.documentation=https://github.com/schemacrawler/SchemaCrawler-Action
+          org.opencontainers.image.documentation=https://github.com/schemacrawler/SchemaCrawler-Action-Usage-Example
 
     - id: push-docker-image
       name: Build and push Docker image
@@ -106,7 +107,7 @@ jobs:
       with:
         call: build
         file: ${{ env.DOCKERFILE_PATH }}
-        context: .
+        context: ${{ env.DOCKER_CONTEXT_PATH }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
         platforms: |-
