@@ -74,7 +74,7 @@ jobs:
 
     - id: validate-build-configuration
       name: Validate build configuration
-      uses: docker/build-push-action@v6
+      uses: docker/build-push-action@v7
       with:
         call: check
         file: ${{ env.DOCKERFILE_PATH }}
@@ -103,7 +103,7 @@ jobs:
 
     - id: push-docker-image
       name: Build and push Docker image
-      uses: docker/build-push-action@v6
+      uses: docker/build-push-action@v7
       with:
         call: build
         file: ${{ env.DOCKERFILE_PATH }}
