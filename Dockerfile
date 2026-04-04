@@ -6,7 +6,7 @@
 # SPDX-License-Identifier: CC-BY-NC-4.0
 # ========================================================================
 
-FROM schemacrawler/schemacrawler:v17.9.0
+FROM schemacrawler/schemacrawler:v17.10.0
 
 # Change user to 'root' to get access to the
 # currently checked out project in $GITHUB_WORKSPACE
