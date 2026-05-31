@@ -1,0 +1,36 @@
+name: Test SchemaCrawler Action
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hello:
+    name: Test SchemaCrawler Action
+    runs-on: ubuntu-latest
+
+    steps:
+    - id: schemacrawler
+      name: Run SchemaCrawler Action with specified command-line
+      uses: schemacrawler/SchemaCrawler-Action@v17.11.2
+      with:
+        entrypoint: /schemacrawler.sh
+        args: >
+          --server=sqlite
+          --database=schemacrawler.sqlite
+          --info-level=standard
+          --command script
+          --tables "Authors|Books|BookAuthors"
+          --script-language python \
+          --script /scripts/mermaid.py
+          --output-file mermaid-er.mmd
+          --log-level CONFIG
+
+    - id: display-report
+      name: Wrap Mermaid diagram in Markdown and display as job output
+      run: |
+        # Create enclosing Markdown file with Mermaid code block
+        echo '```mermaid' > mermaid-diagram.md
+        cat mermaid-er.mmd >> mermaid-diagram.md
+        echo '```' >> mermaid-diagram.md
+        # Display the wrapped content in workflow output
+        cat mermaid-diagram.md >> $GITHUB_STEP_SUMMARY
