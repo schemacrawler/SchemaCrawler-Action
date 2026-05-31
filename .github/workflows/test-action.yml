@@ -22,7 +22,7 @@ jobs:
           --tables "Authors|Books|BookAuthors"
           --script-language python
           --script /scripts/mermaid.py
-          --output-file $GITHUB_WORKSPACE/mermaid-er.mmd
+          --output-file mermaid-er.mmd
           --log-level CONFIG
 
     - id: display-report
