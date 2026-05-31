@@ -16,7 +16,7 @@ jobs:
         entrypoint: /schemacrawler.sh
         args: >
           --server=sqlite
-          --database=schemacrawler.sqlite
+          --database=sc.db
           --info-level=standard
           --command script
           --tables "Authors|Books|BookAuthors"
