@@ -20,7 +20,7 @@ jobs:
           --info-level=standard
           --command script
           --tables "Authors|Books|BookAuthors"
-          --script-language python \
+          --script-language python
           --script /scripts/mermaid.py
           --output-file mermaid-er.mmd
           --log-level CONFIG
