@@ -34,14 +34,20 @@ schemacrawler.sh    — entrypoint: reads config, builds classpath, invokes Sche
 Releases are triggered by pushing a **semantic version tag**:
 
 ```bash
-git tag v18.0.1
-git push origin v18.0.1
+git tag v18.0.2
+git push origin v18.0.2
 ```
 
 The release workflow:
 1. Validates the semver tag format.
 2. Creates a GitHub release with auto-generated release notes.
-3. Builds a multi-platform Docker image (`linux/amd64`, `linux/arm64`) and pushes to Docker Hub with hierarchical version tags (`v18.0.1`, `18.0.1`, `17.10`, `17`).
+3. Builds a multi-platform Docker image (`linux/amd64`, `linux/arm64`) and pushes to Docker Hub with hierarchical version tags (`v18.0.2`, `18.0.2`, `17.10`, `17`).
 4. Attaches SBOM and provenance attestation for supply chain security.
 
 To update the SchemaCrawler version, change the `FROM` base image tag in `Dockerfile` and the image reference in `action.yml`, then push a new version tag.
+
+## Coding Guidelines
+
+- Never use `var` to define variables; use the actual Java type.
+- Always use imports instead of fully qualified class names in code, unless there is a class name conflict in the file.
+- When generating Markdown, keep each paragraph on a single line; do not hard-wrap paragraph text.
