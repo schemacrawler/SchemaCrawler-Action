@@ -10,7 +10,7 @@ banner()
 
 banner "SchemaCrawler Action for GitHub Actions"
 SC_DIR=/opt/schemacrawler
-java -cp "$SC_DIR"/lib/*:"$GITHUB_WORKSPACE"/.github/schemacrawler/lib/*:"$GITHUB_WORKSPACE"/.github/schemacrawler/config schemacrawler.Main "$@"
+java -XX:-UseBASE64Intrinsics -cp "$SC_DIR"/lib/*:"$GITHUB_WORKSPACE"/.github/schemacrawler/lib/*:"$GITHUB_WORKSPACE"/.github/schemacrawler/config schemacrawler.Main "$@"
 EXIT_STATUS=$?
 echo "SC_EXIT_STATUS=$EXIT_STATUS"
 echo "SC_EXIT_STATUS=$EXIT_STATUS" >> $GITHUB_ENV
